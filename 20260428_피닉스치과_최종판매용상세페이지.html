@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>피닉스 치과 자동화 시스템 | 예약 · 상담 · CRM 연동 판매용 상세페이지</title>
+  <meta name="description" content="피닉스 치과 자동화 시스템은 예약, 상담, 내부 전달, CRM 기록, 운영 리포트까지 하나의 흐름으로 연결합니다. 치과 맞춤 AI 에이전트 챗봇과 실무형 자동화를 판매용 상세페이지로 확인하십시오.">
+  <link rel="canonical" href="https://phoenix-portal.site/phoenix-dental-automation">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="피닉스 치과 자동화 시스템 | 판매용 상세페이지">
+  <meta property="og:description" content="치과 예약 자동화, 상담 자동화, AI 에이전트 챗봇, CRM 연동, 운영 리포트를 하나로 연결하는 피닉스 치과 맞춤 자동화 시스템입니다.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "피닉스 치과 자동화 시스템",
+    "description": "치과 예약, 상담, 내부 전달, CRM 연동, 운영 리포트를 통합하는 자동화 시스템",
+    "brand": {
+      "@type": "Brand",
+      "name": "Phoenix Dental"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Phoenix Dental",
+      "email": "phoenixai.sw@gmail.com",
+      "telephone": "070-8064-6114"
+    }
+  }
+  </script>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      color: #1a2332;
+      background: #f4f7fb;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    .skip {
+      position: absolute; left: 12px; top: 12px; z-index: 100;
+      padding: 10px 14px; border-radius: 10px; background: #fff; color: #111;
+      transform: translateY(-120%);
+    }
+    .skip:focus { transform: translateY(0); }
+    .inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 92px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.9); font-size: 14px; font-weight: 700;
+    }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 17, 28, .92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,169,97,.16);
+    }
+    .header-row {
+      min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      color: #f5efe4; font-size: 30px; font-weight: 800; font-family: Georgia, serif; font-style: italic;
+    }
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .nav a {
+      padding: 10px 14px; border-radius: 999px; color: rgba(255,255,255,.76); font-size: 14px; font-weight: 700;
+    }
+    .nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .btn {
+      min-width: 44px; min-height: 44px; padding: 14px 22px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 800;
+    }
+    .btn.primary {
+      color: #172230; background: linear-gradient(90deg, #c9a961, #e8cb7c);
+      box-shadow: 0 12px 28px rgba(201,169,97,.22);
+    }
+    .btn.secondary {
+      color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+    }
+    .hero {
+      --hero-panel-height: 600px;
+      padding: 96px 0 88px;
+      background: radial-gradient(circle at top right, rgba(232,203,124,.14), transparent 24%), linear-gradient(135deg, #0e1724 0%, #182436 58%, #22324b 100%);
+      color: #fff;
+    }
+    .hero-grid, .two-col, .grid-2, .grid-3, .stats, .proof-grid, .footer-grid, .flow-grid {
+      display: grid; gap: 24px;
+    }
+    .hero-grid { grid-template-columns: 1.06fr .94fr; align-items: stretch; min-height: var(--hero-panel-height); }
+    h1 {
+      margin: 10px 0 0; font-size: clamp(30px, 3.9vw, 50px); line-height: 1.08; letter-spacing: -0.04em;
+    }
+    h2 {
+      margin: 0 0 14px; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.16; letter-spacing: -0.028em;
+    }
+    h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.32; }
+    .lead { margin: 12px 0 0; max-width: 560px; font-size: clamp(12px, 1.05vw, 14px); color: rgba(255,255,255,.84); }
+    .sub { margin: 0 0 22px; font-size: 16px; color: rgba(26,35,50,.72); }
+    .sub.light { color: rgba(255,255,255,.78); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .stats { grid-template-columns: repeat(4, 1fr); margin-top: 18px; }
+    .stat {
+      padding: 10px; border-radius: 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+    }
+    .stat strong { display: block; font-size: 18px; color: #e8cb7c; margin-bottom: 2px; }
+    .stat span { font-size: 10px; color: rgba(255,255,255,.74); }
+    .card, .contact-box, .quote-box {
+      background: #fff; border: 1px solid rgba(26,35,50,.08); border-radius: 26px; box-shadow: 0 16px 40px rgba(15,27,45,.06);
+    }
+    .card { padding: 22px; }
+    .image-frame {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(245,247,251,.96));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 30px;
+      box-shadow: 0 20px 44px rgba(7, 15, 28, .18);
+      padding: 18px;
+      line-height: 0;
+      backdrop-filter: blur(8px);
+    }
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+      aspect-ratio: auto;
+      display: block;
+      border-radius: 22px;
+    }
+    .caption { display: none !important; }
+    .image-note {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      max-width: min(320px, calc(100% - 36px));
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(16, 24, 38, .92);
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.5;
+      box-shadow: 0 12px 28px rgba(0,0,0,.22);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .image-note::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      bottom: -6px;
+      width: 12px;
+      height: 12px;
+      background: rgba(16, 24, 38, .92);
+      transform: rotate(45deg);
+      border-radius: 2px;
+    }
+    .image-frame:hover .image-note,
+    .image-frame:focus-within .image-note {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .pay-card {
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .pay-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(201,169,97,.24);
+      box-shadow: 0 18px 34px rgba(15,27,45,.08);
+    }
+    .pay-price {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(201,169,97,.12);
+      color: #9a7420;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .footer-admin-btns {
+      display: none;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .footer-admin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(201,169,97,.16);
+      background: rgba(255,255,255,.04);
+      color: #f2ecdf;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .footer-admin-btn img {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      object-fit: cover;
+      background: #fff;
+    }
+    .floating-tools {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 70;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .floating-consult {
+      position: fixed;
+      left: 24px;
+      bottom: 24px;
+      z-index: 70;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .floating-tool-btn {
+      min-width: 64px;
+      height: 64px;
+      padding: 0 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(201,169,97,.18);
+      cursor: pointer;
+      background: linear-gradient(180deg, rgba(16,20,32,.98), rgba(10,13,24,.98));
+      color: #f0ece4;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      box-shadow: 0 18px 34px rgba(0,0,0,.35);
+    }
+    .floating-tool-btn.gold {
+      background: linear-gradient(135deg, #c9a961, #e8cb7c);
+      color: #172230;
+      border-color: transparent;
+    }
+    .floating-tool-btn.with-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px 0 10px;
+    }
+    .floating-tool-btn.with-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,.18);
+    }
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: transparent;
+      display: none;
+      z-index: 120;
+      pointer-events: none;
+    }
+    .popup-overlay.active { display: block; }
+    .popup-shell {
+      width: min(420px, calc(100vw - 32px));
+      max-height: min(72vh, 760px);
+      overflow: auto;
+      background: linear-gradient(180deg, #0c101b, #121828);
+      color: #f0ece4;
+      border: 1px solid rgba(201,169,97,.16);
+      border-radius: 8px;
+      box-shadow: 0 26px 60px rgba(0,0,0,.45);
+      padding: 20px;
+      position: fixed;
+      pointer-events: auto;
+    }
+    .popup-overlay.right .popup-shell { right: 96px; bottom: 98px; }
+    .popup-overlay.left .popup-shell { left: 96px; bottom: 98px; }
+    .popup-overlay.center .popup-shell {
+      left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: min(760px, calc(100vw - 32px)); max-height: min(88vh, 920px); padding: 26px;
+    }
+    .popup-shell.resizable {
+      resize: both;
+      overflow: auto;
+      min-width: 340px;
+      min-height: 320px;
+      max-width: min(760px, calc(100vw - 32px));
+      max-height: min(88vh, 920px);
+    }
+    .chat-size-shell { width: min(420px, calc(100vw - 32px)); min-width: 420px; height: 420px; min-height: 420px; }
+    .popup-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,169,97,.12);
+    }
+    .popup-title-wrap { display: inline-flex; align-items: center; gap: 10px; }
+    .popup-title-logo {
+      width: 28px; height: 28px; border-radius: 8px; object-fit: cover; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,.18);
+    }
+    .popup-top h3 { margin: 0; font-size: 18px; color: #ffffff; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; }
+    .popup-subtitle { margin-top: 4px; font-size: 11px; color: rgba(201,169,97,.88); letter-spacing: .12em; text-transform: uppercase; }
+    .popup-close {
+      border: 0; background: rgba(255,255,255,.06); color: rgba(240,236,228,.82); width: 38px; height: 38px; border-radius: 4px; cursor: pointer; font-size: 18px;
+    }
+    .form-grid { display: grid; gap: 12px; }
+    .form-grid input, .form-grid textarea, .form-grid select {
+      width: 100%; border: 1px solid rgba(201,169,97,.14); border-radius: 4px; padding: 14px 16px; font: inherit; color: #f0ece4; background: rgba(255,255,255,.04);
+    }
+    .form-grid input::placeholder, .form-grid textarea::placeholder { color: rgba(240,236,228,.42); }
+    .detail-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; margin:0 0 18px; }
+    .detail-card { padding: 14px 14px 16px; border-radius: 18px; background: rgba(255,255,255,.05); border: 1px solid rgba(201,169,97,.10); }
+    .detail-card h4 { margin: 0 0 6px; font-size: 15px; line-height: 1.35; color: #ffffff; font-weight:800; }
+    .detail-card p { margin: 0; font-size: 13px; line-height: 1.65; color: #ffffff; font-weight:500; }
+    .chat-log {
+      min-height: 180px; max-height: 260px; overflow: auto; border-radius: 8px; background: rgba(255,255,255,.03); padding: 16px; border: 1px solid rgba(201,169,97,.1); display: grid; gap: 10px;
+    }
+    .chat-bubble { padding: 12px 14px; border-radius: 8px; max-width: 88%; font-size: 14px; line-height: 1.6; }
+    .chat-bubble.user { background: rgba(201,169,97,.18); color: #f6efe1; justify-self: end; }
+    .chat-bubble.bot { background: rgba(255,255,255,.04); border: 1px solid rgba(201,169,97,.1); color: #f0ece4; }
+    .auth-flow-shell { width: min(1040px, calc(100vw - 80px)); min-height: 600px; padding: 34px 40px 38px; background: linear-gradient(180deg, #090d17, #0d1220); }
+    .auth-flow-step { display:none; min-height:500px; align-items:center; justify-content:center; flex-direction:column; text-align:center; }
+    .auth-flow-step.active { display:flex; }
+    .auth-flow-title { margin:0 0 10px; font-size:52px; line-height:1.1; color:#e8cb7c; letter-spacing:-0.03em; text-transform:none; font-weight:800; }
+    .auth-flow-desc { margin:0 0 28px; color:rgba(255,255,255,.68); font-size:16px; line-height:1.7; }
+    .auth-choice-grid { display:grid; grid-template-columns: repeat(2, minmax(240px,320px)); gap:18px; justify-content:center; width:100%; margin-top:18px; }
+    .auth-choice-card { min-height:210px; padding:34px 24px; border-radius:4px; background: rgba(19,26,42,.98); border:1px solid rgba(255,255,255,.08); text-align:center; cursor:pointer; transition:all .2s; box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); }
+    .auth-choice-card:hover { transform: translateY(-2px); border-color: rgba(201,169,97,.34); background: rgba(24,31,49,.98); }
+    .auth-choice-title { margin:0 0 12px; color:#fff; font-size:34px; font-weight:800; letter-spacing:-0.03em; }
+    .auth-choice-desc { margin:0; font-size:14px; color:rgba(255,255,255,.64); line-height:1.6; }
+    .auth-form-panel { width:min(440px,100%); text-align:left; }
+    .auth-field { margin-bottom:18px; }
+    .auth-field label { display:block; margin-bottom:10px; font-size:13px; color:rgba(255,255,255,.68); }
+    .auth-field input, .auth-field select { width:100%; border:0; border-bottom:1px solid rgba(255,255,255,.14); border-radius:0; padding:12px 0 14px; font:inherit; color:#fff; background:transparent; outline:none; }
+    .auth-field select { background-color:#0b1120; color:#fff; }
+    .auth-field select option { background:#fff; color:#111827; }
+    .auth-flow-btn { width:100%; min-height:52px; border:0; border-radius:2px; background: linear-gradient(135deg,#c9a961,#e0ba63); color:#141b28; font-size:15px; font-weight:800; cursor:pointer; margin-top:14px; }
+    .auth-flow-link { margin-top:18px; border:0; background:transparent; color:rgba(255,255,255,.36); font-size:13px; cursor:pointer; }
+    .auth-otp-box { position:relative; width:min(440px,100%); }
+    .auth-otp-box input { width:100%; border:1px solid rgba(255,255,255,.12); background:rgba(0,0,0,.12); color:#fff; padding:18px 88px 18px 18px; font-size:26px; letter-spacing:.45em; text-align:center; border-radius:2px; }
+    .auth-otp-timer { position:absolute; right:18px; top:50%; transform:translateY(-50%); color:#f36c86; font-size:18px; font-weight:700; }
+    .auth-complete-icon { width:70px; height:70px; border-radius:999px; object-fit:cover; margin-bottom:24px; box-shadow:0 10px 24px rgba(0,0,0,.28); }
+    .auth-success-alert { margin:0 0 20px; width:min(520px,100%); padding:18px 20px; border-radius:14px; background:#fff; color:#111827; display:none; align-items:center; justify-content:space-between; gap:16px; box-shadow:0 16px 40px rgba(0,0,0,.2); }
+    .auth-success-alert.active { display:flex; }
+    .auth-success-alert button { border:0; border-radius:999px; background:#0f9ba8; color:#fff; font-weight:700; padding:12px 18px; cursor:pointer; }
+    .payment-page-overlay { position:fixed; inset:0; background:#0a0f1b; z-index:220; display:none; overflow-y:auto; }
+    .payment-page-overlay.active { display:block; }
+    .payment-page-bar { position:sticky; top:0; background:rgba(10,10,15,.92); backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,.08); padding:16px 40px; display:flex; align-items:center; justify-content:space-between; z-index:5; }
+    .payment-page-left { display:inline-flex; align-items:center; gap:12px; }
+    .payment-page-title { display:inline-flex; align-items:center; gap:10px; color:#f3ede3; font-size:20px; font-weight:700; }
+    .payment-home-btn { min-height:36px; padding:0 12px; border:1px solid rgba(201,169,97,.18); background:rgba(255,255,255,.03); color:#f4efe5; font-size:12px; font-weight:700; cursor:pointer; }
+    .payment-form-wrap { max-width:640px; margin:60px auto; padding:0 40px 60px; text-align:center; }
+    .payment-loading-text { margin-bottom:14px; color:rgba(255,255,255,.78); font-size:15px; font-weight:700; }
+    #payment-widget { width:100%; margin-bottom:20px; }
+    .payment-widget-card { background:#fff; overflow:hidden; padding:0; box-shadow:0 14px 40px rgba(0,0,0,.24); }
+    .payment-action-btn { width:100%; min-height:56px; border:0; background: linear-gradient(135deg,#c9a961,#e0ba63); color:#141b28; font-size:15px; font-weight:800; cursor:pointer; margin-top:20px; }
+    @media (max-width:1024px) {
+      .hero { --hero-panel-height: 520px; }
+      .hero-grid, .two-col, .grid-3, .proof-grid, .footer-grid { grid-template-columns: 1fr; }
+      .grid-2, .stats, .mock-mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .detail-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .auth-flow-shell { width:min(100vw - 40px, 920px); min-height:560px; padding:30px 26px; }
+    }
+    @media (max-width:767px) {
+      .inner { width: min(100% - 28px, 1180px); }
+      .section { padding: 60px 0; }
+      .header-row { padding: 10px 0; flex-direction: column; align-items: flex-start; }
+      .grid-2, .stats, .mock-mini-grid, .auth-choice-grid, .detail-grid { grid-template-columns: 1fr; }
+      .floating-consult { left:14px; bottom:14px; }
+      .floating-tools { right:14px; bottom:14px; }
+      .popup-overlay.left .popup-shell, .popup-overlay.right .popup-shell { left:14px; right:14px; width:auto; bottom:86px; }
+      .auth-flow-shell { width:min(100vw - 24px, 760px); min-height:auto; padding:24px 18px; }
+      .auth-flow-step { min-height:auto; padding:20px 0; }
+      .auth-flow-title { font-size:34px; }
+      .auth-choice-title { font-size:26px; }
+      .auth-otp-box input { font-size:22px; letter-spacing:.3em; }
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: var(--hero-panel-height);
+      padding: 0;
+      max-width: 82%;
+    }
+    .hero-visual {
+      height: var(--hero-panel-height);
+      display: flex;
+      align-items: stretch;
+    }
+    .hero-visual.image-frame {
+      padding: 22px;
+      border-radius: 34px;
+    }
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-slider-stage {
+      position: relative;
+      flex: 1;
+      height: calc(var(--hero-panel-height) - 44px);
+      min-height: calc(var(--hero-panel-height) - 44px);
+      background: transparent;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: heroSlideFade 15s infinite;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      padding: 0;
+      background: transparent;
+    }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 5s; }
+    .hero-slide:nth-child(3) { animation-delay: 10s; }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+      border-radius: 24px;
+    }
+    .section.alt { background: #edf2f8; }
+    .section.navy { background: #15202f; color: #fff; }
+    .section.navy .card, .section.navy .quote-box { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); color: #fff; }
+    .section.navy .card p, .section.navy .caption, .section.navy .quote-box p { color: rgba(255,255,255,.8); }
+    .section.navy .quote-detail-card {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.08);
+    }
+    .section.navy .quote-detail-card h4 { color: #fff; }
+    .section.navy .quote-detail-card p { color: rgba(255,255,255,.78); }
+    .two-col { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .flow-grid { grid-template-columns: 1fr; gap: 0; }
+    .image-stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: 100%;
+    }
+    .image-stack .image-frame img {
+      min-height: 250px;
+    }
+    .visual-carousel {
+      overflow: hidden;
+      width: 100%;
+      padding: 8px 0;
+    }
+    .visual-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: visualMarquee 36s linear infinite;
+    }
+    .visual-slide {
+      width: 300px;
+      flex: 0 0 300px;
+    }
+    .visual-slide img {
+      width: 100%;
+      min-height: 300px;
+      max-height: 300px;
+      object-fit: contain;
+    }
+    .tag {
+      display: inline-block; margin-bottom: 10px; padding: 5px 9px; border-radius: 999px;
+      background: rgba(201,169,97,.12); color: #87681f; font-size: 12px; font-weight: 700;
+    }
+    .problem-card p, .flow-card p, .feature-card p { margin: 0; }
+    .section-copy-card {
+      background: #fff;
+      border: 1px solid rgba(26,35,50,.08);
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(15,27,45,.06);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+    .section-copy-card.navy {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    .section-copy-card.navy p,
+    .section-copy-card.navy .sub,
+    .section-copy-card.navy .detail-card p,
+    .section-copy-card.navy .detail-card h4 { color: rgba(255,255,255,.82); }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .detail-card {
+      padding: 14px 14px 16px;
+      border-radius: 18px;
+      background: rgba(26,35,50,.04);
+      border: 1px solid rgba(26,35,50,.06);
+    }
+    .detail-card h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: #1a2332;
+    }
+    .detail-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(26,35,50,.72);
+    }
+    .section-copy-card.navy .detail-card {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.08);
+    }
+    .flow-copy {
+      max-width: 96%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .flow-marquee {
+      overflow: hidden;
+      position: relative;
+      height: 348px;
+      margin-top: 6px;
+    }
+    .flow-track {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: flowVertical 22s linear infinite;
+    }
+    .flow-card {
+      min-height: 60px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 88px 120px 1fr;
+      align-items: start;
+      gap: 14px;
+      flex: 0 0 auto;
+    }
+    .flow-card h3 {
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 0;
+      letter-spacing: -0.02em;
+      align-self: center;
+    }
+    .flow-card p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(26,35,50,.76);
+      align-self: center;
+    }
+    .flow-card .tag {
+      margin-bottom: 0;
+      font-size: 11px;
+      align-self: center;
+      justify-self: start;
+    }
+    .problem-card strong, .feature-card strong { color: #c9a961; }
+    .proof-grid { grid-template-columns: 1.05fr .95fr; align-items: stretch; }
+    .agent-copy {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .agent-kpis {
+      flex: 1;
+      align-content: center;
+    }
+    .agent-visual {
+      min-height: 100%;
+      display: flex;
+    }
+    .agent-visual .image-frame {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: 100%;
+    }
+    .agent-visual .image-frame img {
+      flex: 1;
+      min-height: 520px;
+      object-fit: contain;
+      object-position: center;
+      aspect-ratio: auto;
+    }
+    .quote-box { padding: 30px; display: flex; flex-direction: column; justify-content: space-between; }
+    .quote-box strong { display: block; font-size: 24px; color: #e8cb7c; margin-bottom: 10px; }
+    .quote-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .quote-detail-card {
+      padding: 14px 14px 16px;
+      border-radius: 18px;
+      background: rgba(26,35,50,.04);
+      border: 1px solid rgba(26,35,50,.06);
+    }
+    .quote-detail-card h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: #1a2332;
+    }
+    .quote-detail-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(26,35,50,.72);
+    }
+    .contact-box {
+      padding: 30px; background: linear-gradient(135deg, #15202f, #22324a); color: #fff;
+      border-color: rgba(201,169,97,.16);
+    }
+    .contact-box p { color: rgba(255,255,255,.82); }
+    .contact-list { display: grid; gap: 10px; margin-top: 16px; font-size: 15px; color: rgba(255,255,255,.82); }
+    .footer { background: #0d1520; color: #fff; padding: 36px 0 44px; }
+    .footer-grid { grid-template-columns: 1.1fr .9fr; align-items: start; }
+    .footer p, .footer small { color: rgba(255,255,255,.68); }
+    @keyframes heroSlideFade {
+      0% { opacity: 0; }
+      6% { opacity: 1; }
+      28% { opacity: 1; }
+      33.333% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes visualMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-322px * 9)); }
+    }
+    @keyframes flowVertical {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(calc(-72px * 5 - 12px * 5)); }
+    }
+    @media (max-width: 1024px) {
+      .hero { --hero-panel-height: 520px; }
+      .hero-grid, .two-col, .grid-3, .proof-grid, .footer-grid { grid-template-columns: 1fr; }
+      .grid-2, .stats { grid-template-columns: repeat(2, 1fr); }
+      .flow-grid { grid-template-columns: 1fr; }
+      .flow-copy { max-width: 100%; }
+      .flow-marquee { height: 320px; }
+      .quote-detail-grid, .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .image-stack { grid-template-rows: auto auto; }
+      .visual-slide { width: 260px; flex-basis: 260px; }
+      .visual-slide img { min-height: 260px; max-height: 260px; }
+      .hero-copy, .hero-visual, .hero-slider-stage { height: auto; min-height: 0; }
+      .hero-slider-stage { min-height: 476px; height: 476px; }
+    }
+    @media (max-width: 767px) {
+      .hero { --hero-panel-height: auto; }
+      .inner { width: min(100% - 28px, 1180px); }
+      .section { padding: 60px 0; }
+      .header-row { padding: 10px 0; flex-direction: column; align-items: flex-start; }
+      .grid-2, .stats { grid-template-columns: 1fr; }
+      .flow-grid { grid-template-columns: 1fr; }
+      .flow-marquee { height: auto; overflow: visible; }
+      .flow-track { animation: none; }
+      .flow-card { grid-template-columns: 1fr; gap: 8px; }
+      .quote-detail-grid, .detail-grid { grid-template-columns: 1fr; }
+      .image-stack { grid-template-rows: auto; }
+      .visual-slide { width: 220px; flex-basis: 220px; }
+      .visual-slide img { min-height: 220px; max-height: 220px; }
+      h1 { font-size: clamp(30px, 8.2vw, 44px); }
+      h2 { font-size: clamp(24px, 6.8vw, 34px); }
+      h3 { font-size: 18px; }
+      .lead { font-size: 14px; }
+      .sub { font-size: 15px; }
+      .hero-copy, .hero-visual, .hero-slider-stage { height: auto; }
+      .hero-slider-stage { min-height: 336px; }
+      .agent-visual .image-frame img { min-height: 380px; object-position: center top; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">본문으로 바로가기</a>
+
+  <header class="site-header">
+    <div class="inner header-row">
+      <a class="brand" href="#hero"><img class="brand-logo" src="./Logos/phoenix_ai_logo.jpg" alt="Phoenix AI 로고" width="42" height="42">Phoenix Dental</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#hero">메인</a>
+        <a href="#pain">문제점</a>
+        <a href="#flow">도입 흐름</a>
+        <a href="#agent">AI 챗봇</a>
+        <a href="#package-features">패키지</a>
+        <a href="#" onclick="openShell('authShell'); return false;">로그인</a>
+        <a href="#" onclick="openShell('consultShell'); return false;" class="btn primary" style="min-height:40px;padding:10px 18px;">상담 신청</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="inner hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">치과 예약 · 상담 · 내부 전달 · CRM 자동화</div>
+          <h1>문의는 늘어나는데<br>상담실장은 더 바빠지는 치과,<br><span style="color:#e8cb7c;">이제 구조를 바꾸십시오</span></h1>
+          <p class="lead">피닉스 치과 자동화 시스템은 홈페이지 문의, 전화, 메시지, 예약 요청, 상담 메모, CRM 기록, 운영 리포트를 하나의 흐름으로 연결합니다. 단순 챗봇이 아니라 실제 치과 운영을 돕는 AI 에이전트형 자동화 시스템입니다.</p>
+          <div class="btn-row">
+            <a href="#contact" class="btn primary">지금 상담 신청</a>
+            <a href="#proof" class="btn secondary">도입 효과 보기</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>24시간</strong><span>야간 문의 자동 응대</span></div>
+            <div class="stat"><strong>즉시 분류</strong><span>문의 유형별 자동 정리</span></div>
+            <div class="stat"><strong>CRM 연동</strong><span>상담 이력 자동 축적</span></div>
+            <div class="stat"><strong>운영 리포트</strong><span>데이터 기반 판단 지원</span></div>
+          </div>
+        </div>
+        <div class="image-frame hero-visual" tabindex="0">
+          <div class="hero-slider">
+            <div class="hero-slider-stage">
+              <div class="hero-slide">
+                <img src="./images/high_01_cover.png" alt="피닉스 치과 자동화 시스템 메인 인포그래픽 1" width="1024" height="1024">
+              </div>
+              <div class="hero-slide">
+                <img src="./images/high_02_chatbot.png" alt="피닉스 치과 AI 에이전트 챗봇 인포그래픽 2" width="1024" height="1024">
+              </div>
+              <div class="hero-slide">
+                <img src="./images/high_03_before_after.png" alt="피닉스 치과 자동화 도입 전후 비교 인포그래픽 3" width="1024" height="1024">
+              </div>
+            </div>
+          </div>
+          <div class="image-note">메인 비주얼, 치과 자동화 핵심 메시지를 보여주는 대표 이미지입니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pain">
+      <div class="inner">
+        <h2>기존 치과 홈페이지가 예약 전환을 놓치는 이유</h2>
+        <p class="sub">치과는 환자 문의가 발생하는 순간이 중요합니다. 그런데 많은 홈페이지는 설명만 있고 응답은 없습니다. 결국 환자는 질문에 답해주는 곳으로 이동합니다.</p>
+        <div class="grid-3">
+          <div class="card problem-card"><span class="tag">문제 1</span><h3>야간 문의가 사라집니다</h3><p>진료 종료 후 들어오는 문의를 다음 날 확인하는 구조로는 예약 전환을 놓치기 쉽습니다.</p></div>
+          <div class="card problem-card"><span class="tag">문제 2</span><h3>상담실장이 반복 업무에 묶입니다</h3><p>보험, 비용, 진료 가능 여부, 위치, 주차 같은 반복 질문이 상담 집중도를 떨어뜨립니다.</p></div>
+          <div class="card problem-card"><span class="tag">문제 3</span><h3>예약과 전달이 분산됩니다</h3><p>전화, 카톡, 홈페이지, 메시지가 분산되면 누락과 중복 응대가 생기고 운영 품질이 흔들립니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="inner proof-grid">
+        <div class="flow-copy section-copy-card">
+          <div>
+            <h2>피닉스 치과 자동화는 이렇게 작동합니다</h2>
+            <p class="sub">홈페이지에 방문한 환자가 질문을 남기는 순간부터 예약 연결, 내부 전달, CRM 기록, 운영 리포트까지 하나의 플로우로 이어집니다.</p>
+          </div>
+          <div class="flow-marquee">
+            <div class="flow-track">
+              <div class="flow-grid">
+                <div class="card flow-card"><span class="tag">STEP 1</span><h3>문의 접수</h3><p>홈페이지, 전화, 메시지, 채널별 문의를 모읍니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 2</span><h3>AI 응답</h3><p>보험, 진료 가능 여부, 기본 FAQ를 즉시 안내합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 3</span><h3>예약 유도</h3><p>원하는 날짜, 상담 희망, 진료 목적을 구조화합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 4</span><h3>내부 전달</h3><p>상담실장과 데스크에 필요한 정보만 정리해 전달합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 5</span><h3>데이터 축적</h3><p>CRM, 운영 리포트, 문의 패턴 분석에 자동 반영합니다.</p></div>
+              </div>
+              <div class="flow-grid" aria-hidden="true">
+                <div class="card flow-card"><span class="tag">STEP 1</span><h3>문의 접수</h3><p>홈페이지, 전화, 메시지, 채널별 문의를 모읍니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 2</span><h3>AI 응답</h3><p>보험, 진료 가능 여부, 기본 FAQ를 즉시 안내합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 3</span><h3>예약 유도</h3><p>원하는 날짜, 상담 희망, 진료 목적을 구조화합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 4</span><h3>내부 전달</h3><p>상담실장과 데스크에 필요한 정보만 정리해 전달합니다.</p></div>
+                <div class="card flow-card"><span class="tag">STEP 5</span><h3>데이터 축적</h3><p>CRM, 운영 리포트, 문의 패턴 분석에 자동 반영합니다.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image-frame" tabindex="0">
+          <img src="./images/medium_02_omnichannel.png" alt="치과 문의 통합 및 옴니채널 응대 인포그래픽" width="1024" height="1024">
+          <div class="image-note">도입 흐름 섹션 이미지입니다. 홈페이지, 전화, 메신저 문의 통합 구조를 설명합니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section navy" id="agent">
+      <div class="inner two-col">
+        <div class="agent-copy section-copy-card navy">
+          <div>
+            <h2>AI 에이전트 챗봇이 치과 상담 직원을 보조합니다</h2>
+            <p class="sub light">단순 채팅창이 아니라 치과 운영 문맥을 반영한 AI 에이전트입니다. 환자는 바로 질문하고, 병원은 더 정확하게 대응할 수 있습니다.</p>
+          </div>
+          <div class="grid-2 agent-kpis">
+            <div class="card feature-card"><strong>24시간 응대</strong><p>밤 10시에도, 주말에도 문의를 받아 다음 단계로 연결합니다.</p></div>
+            <div class="card feature-card"><strong>진료별 분류</strong><p>스케일링, 임플란트, 교정, 보험 문의를 자동으로 분리합니다.</p></div>
+            <div class="card feature-card"><strong>담당자 전달</strong><p>상담실장이 바로 확인할 수 있게 핵심 문의를 정리합니다.</p></div>
+            <div class="card feature-card"><strong>브랜드 톤 반영</strong><p>치과에 맞는 말투와 응대 범위를 설정해 일관된 인상을 유지합니다.</p></div>
+          </div>
+        </div>
+        <div class="agent-visual">
+          <div class="image-frame" tabindex="0">
+            <img src="./images/high_02_chatbot.png" alt="치과 AI 에이전트 챗봇 구조 인포그래픽" width="1024" height="1024">
+            <div class="image-note">AI 챗봇 섹션 이미지입니다. 치과 상담 직원처럼 작동하는 구조를 보여줍니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="proof">
+      <div class="inner two-col">
+        <div class="quote-box">
+          <div>
+            <strong>도입 전에는 문의가 쌓이고, 도입 후에는 흐름이 정리됩니다</strong>
+            <p>피닉스 치과 자동화 시스템의 핵심은 예쁜 화면이 아니라 실제 운영 구조를 정리하는 데 있습니다. 예약 누락을 줄이고, 반복 응대를 줄이고, 상담실장과 데스크가 더 중요한 응대에 집중할 수 있게 만드는 것이 목표입니다.</p>
+            <p>즉, 단순히 챗봇을 붙이는 것이 아니라 치과의 예약 전환 구조 자체를 바꾸는 방식입니다. 환자 경험은 더 매끄러워지고, 병원 내부 흐름은 더 안정적으로 정리됩니다.</p>
+          </div>
+          <div class="quote-detail-grid">
+            <div class="quote-detail-card">
+              <h4>예약 전환 강화</h4>
+              <p>야간 문의와 반복 질문을 빠르게 응대해 이탈 가능성을 낮추고 예약 연결률을 높입니다.</p>
+            </div>
+            <div class="quote-detail-card">
+              <h4>상담실장 집중도 확보</h4>
+              <p>단순 문의를 줄여 중요한 상담과 고가 진료 안내에 더 집중할 수 있게 만듭니다.</p>
+            </div>
+            <div class="quote-detail-card">
+              <h4>내부 전달 안정화</h4>
+              <p>문의 유형, 희망 일정, 핵심 메모를 정리해 데스크와 실장 간 전달 누락을 줄입니다.</p>
+            </div>
+            <div class="quote-detail-card">
+              <h4>데이터 기반 운영</h4>
+              <p>문의 패턴과 관심 진료 데이터를 축적해 마케팅과 운영 판단의 근거로 활용합니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="image-frame" tabindex="0">
+          <img src="./images/high_03_before_after.png" alt="치과 자동화 도입 전후 비교 인포그래픽" width="1024" height="1024">
+          <div class="image-note">도입 효과 섹션 이미지입니다. 자동화 전후 차이를 비교해 보여줍니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="inner two-col">
+        <div class="section-copy-card">
+          <div>
+            <h2>판매 포인트가 분명한 기능 구성</h2>
+            <p class="sub">상세페이지에서는 기능을 나열하는 것보다, 병원 운영상 어떤 이익이 생기는지 명확히 보여주는 것이 중요합니다. 그래서 아래 3가지를 중심으로 제안합니다.</p>
+          </div>
+          <div style="display:grid; gap:18px;">
+            <div class="card pay-card" onclick="openPaymentFor('예약 자동화 패키지', 129000)"><span class="tag">핵심 1</span><h3>예약 자동화</h3><p>문의 접수, 예약 희망 정보 수집, 담당자 전달까지 이어져 예약 전환 손실을 줄입니다.</p><div class="pay-price">129,000원 결제하기</div></div>
+            <div class="card pay-card" onclick="openPaymentFor('상담 자동화 패키지', 289000)"><span class="tag">핵심 2</span><h3>상담 자동화</h3><p>자주 묻는 질문을 AI가 선응대하고, 중요한 문의만 사람에게 넘겨 응대 효율을 높입니다.</p><div class="pay-price">289,000원 결제하기</div></div>
+            <div class="card pay-card" onclick="openPaymentFor('운영 데이터화 패키지', 499000)"><span class="tag">핵심 3</span><h3>운영 데이터화</h3><p>상담 내역, 반복 질문, 관심 시술, 예약 전환 패턴이 CRM과 리포트에 쌓여 운영 개선 근거가 됩니다.</p><div class="pay-price">499,000원 결제하기</div></div>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card"><h4>예약 연결성</h4><p>문의 단계에서 이탈하지 않도록 자연스럽게 예약 단계까지 유도합니다.</p></div>
+            <div class="detail-card"><h4>FAQ 절감</h4><p>반복 질문을 자동화해 응대 시간을 줄이고 답변 일관성을 높입니다.</p></div>
+            <div class="detail-card"><h4>상담 우선순위</h4><p>중요한 문의를 먼저 확인할 수 있게 정리해 상담실장 효율을 높입니다.</p></div>
+            <div class="detail-card"><h4>운영 해석력</h4><p>데이터가 쌓이기 때문에 어떤 문의가 전환되는지 더 명확히 보이게 됩니다.</p></div>
+          </div>
+        </div>
+        <div class="image-stack">
+          <div class="image-frame" tabindex="0">
+            <img src="./images/medium_03_crm_report.png" alt="치과 CRM 연동 및 운영 리포트 인포그래픽" width="1024" height="1024">
+            <div class="image-note">기능 구성 섹션 이미지입니다. CRM 연동과 운영 리포트 구조를 설명합니다.</div>
+          </div>
+          <div class="image-frame" tabindex="0">
+            <img src="./images/medium_01_dashboard.png" alt="치과 운영 대시보드 인포그래픽" width="1024" height="1024">
+            <div class="image-note">운영 대시보드 이미지입니다. 상담 흐름과 핵심 지표를 한 화면에서 보여줍니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="visuals">
+      <div class="inner">
+        <h2>상세페이지 신뢰도를 높이는 보조 비주얼</h2>
+        <p class="sub">메인 커버, 상담 흐름, 대시보드, CRM, 챗봇, 도입 전후 비교 이미지를 섞어 배치하면 텍스트만 있는 페이지보다 훨씬 높은 설득력을 만들 수 있습니다.</p>
+        <div class="visual-carousel">
+          <div class="visual-track">
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/low_01_hero.png" alt="치과 자동화 개요 인포그래픽" width="1024" height="1024"><div class="image-note">자동화 개요를 요약하는 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/low_02_flow.png" alt="치과 예약 상담 흐름 인포그래픽" width="1024" height="1024"><div class="image-note">예약과 상담 흐름을 설명하는 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/low_03_cta.png" alt="치과 자동화 CTA 인포그래픽" width="1024" height="1024"><div class="image-note">최종 CTA와 도입 유도 메시지를 담은 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/medium_01_dashboard.png" alt="치과 자동화 대시보드 인포그래픽" width="1024" height="1024"><div class="image-note">상담실장용 대시보드와 운영 지표를 설명합니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/medium_02_omnichannel.png" alt="치과 문의 통합 인포그래픽" width="1024" height="1024"><div class="image-note">문의 통합 구조를 보여주는 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/medium_03_crm_report.png" alt="치과 CRM 리포트 인포그래픽" width="1024" height="1024"><div class="image-note">CRM과 리포트 구조를 설명하는 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/high_01_cover.png" alt="치과 자동화 메인 커버 인포그래픽" width="1024" height="1024"><div class="image-note">메인 커버용 대표 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/high_02_chatbot.png" alt="치과 AI 챗봇 인포그래픽" width="1024" height="1024"><div class="image-note">AI 챗봇 구조를 설명하는 이미지입니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/high_03_before_after.png" alt="치과 자동화 전후 비교 인포그래픽" width="1024" height="1024"><div class="image-note">도입 전후 비교를 보여주는 이미지입니다.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="package-features">
+      <div class="inner two-col">
+        <div class="section-copy-card">
+          <div>
+            <h2>패키지형 확장 기능도 현재 디자인 안에 장착할 수 있습니다</h2>
+            <p class="sub">벤치마킹한 웹사이트 패키지 기준으로, 치과 상세 웹사이트 안에 챗봇, 상담내역 저장, 모바일 인증, 로그인, 결제 기능을 추가할 수 있는 구조를 맞췄습니다.</p>
+          </div>
+          <div class="price-list" style="display:grid; gap:14px; margin-top:18px;">
+            <div class="price-item card" onclick="openPaymentFor('기본 상담 자동화 패키지', 129000)" style="display:flex; justify-content:space-between; align-items:center; gap:16px; cursor:pointer;"><div><strong>기본 상담 자동화 패키지</strong><span style="display:block; font-size:13px; color:rgba(26,35,50,.68);">홈페이지 문의 응답, 예약 유도, 기본 상담 기록 저장</span></div><b style="color:#c9a961;">129,000원</b></div>
+            <div class="price-item card" onclick="openPaymentFor('모바일 인증 연동 패키지', 289000)" style="display:flex; justify-content:space-between; align-items:center; gap:16px; cursor:pointer;"><div><strong>모바일 인증 연동 패키지</strong><span style="display:block; font-size:13px; color:rgba(26,35,50,.68);">로그인, 휴대폰 인증, 관리자 분기와 연계된 확장 패키지</span></div><b style="color:#c9a961;">289,000원</b></div>
+            <div class="price-item card" onclick="openPaymentFor('결제·운영 통합 패키지', 499000)" style="display:flex; justify-content:space-between; align-items:center; gap:16px; cursor:pointer;"><div><strong>결제·운영 통합 패키지</strong><span style="display:block; font-size:13px; color:rgba(26,35,50,.68);">토스 결제, 상담 저장, CRM 흐름까지 포함한 고급 패키지</span></div><b style="color:#c9a961;">499,000원</b></div>
+          </div>
+        </div>
+        <div class="image-frame" tabindex="0">
+          <img src="./images/high_02_chatbot.png" alt="패키지 확장 기능 대표 이미지" width="1024" height="1024">
+          <div class="image-note">패키지 기능을 현재 치과용 디자인에 맞춰 확장 장착하는 개념 비주얼입니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section navy" id="contact">
+      <div class="inner two-col">
+        <div class="contact-box">
+          <div>
+            <h2>지금 치과 운영 흐름을 알려주시면<br>가장 먼저 자동화할 구간부터 제안해 드립니다</h2>
+            <p>예약 누락이 많은지, 상담 반복이 많은지, 상담실장 전달이 느린지, CRM 정리가 안 되는지부터 말씀해 주십시오. 피닉스 치과에 맞는 자동화 순서를 바로 설계해 드릴 수 있습니다.</p>
+          </div>
+          <div class="detail-grid" style="margin-top:20px; margin-bottom:18px;">
+            <div class="detail-card"><h4>추천 시작점 1</h4><p>예약 문의가 누락되는 구간부터 우선 자동화해 전환 손실을 줄입니다.</p></div>
+            <div class="detail-card"><h4>추천 시작점 2</h4><p>상담실장 반복 응대를 줄이는 FAQ 응답 구조부터 정리합니다.</p></div>
+            <div class="detail-card"><h4>추천 시작점 3</h4><p>전화, 홈페이지, 메신저 문의를 한 화면으로 모으는 흐름을 제안합니다.</p></div>
+            <div class="detail-card"><h4>추천 시작점 4</h4><p>CRM 기록과 운영 리포트를 붙여 병원 내부 판단 자료까지 연결합니다.</p></div>
+          </div>
+          <div class="btn-row">
+            <a href="tel:07080646114" class="btn primary">070-8064-6114</a>
+            <a href="mailto:phoenixai.sw@gmail.com" class="btn secondary" autocomplete="email">이메일 문의</a>
+          </div>
+          <div class="contact-list">
+            <div><strong>브랜드</strong> Phoenix Dental</div>
+            <div><strong>이메일</strong> phoenixai.sw@gmail.com</div>
+            <div><strong>핵심 제안</strong> 예약 자동화, 상담 자동화, CRM 연동, 운영 리포트, AI 에이전트 챗봇</div>
+          </div>
+        </div>
+        <div class="image-frame" tabindex="0">
+          <img src="./images/low_02_flow.png" alt="치과 자동화 최종 상담 유도 인포그래픽" width="1024" height="1024">
+          <div class="image-note">상담 신청 섹션 이미지입니다. 문의부터 예약까지 이어지는 흐름을 보여줍니다.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-consult">
+    <button class="floating-tool-btn gold with-logo" type="button" onclick="openShell('consultShell')"><img src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="26" height="26">상담 신청</button>
+  </div>
+  <div class="floating-tools">
+    <button class="floating-tool-btn gold with-logo" type="button" onclick="openShell('chatShell')"><img src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="26" height="26">AI 챗봇</button>
+  </div>
+
+  <div class="popup-overlay left" id="consultShell"><div class="popup-shell resizable chat-size-shell"><div class="popup-top"><div class="popup-title-wrap"><img class="popup-title-logo" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28"><div><h3>Consult Request</h3><div class="popup-subtitle">Phoenix Dental 상담 신청</div></div></div><button class="popup-close" type="button" onclick="closeShell('consultShell')">×</button></div><div class="detail-grid"><div class="detail-card"><h4>예약 상담</h4><p>치과 예약 흐름 자동화, 문의 누락 방지, 데스크 전달 체계를 먼저 진단합니다.</p></div><div class="detail-card"><h4>운영 진단</h4><p>상담실장 반복 업무, FAQ 자동화, CRM 연동, 결제 전환 포인트까지 함께 설계합니다.</p></div></div><div class="form-grid"><input id="consultNameShell" type="text" placeholder="이름"><input id="consultPhoneShell" type="tel" placeholder="연락처"><textarea id="consultMemoShell" rows="4" placeholder="현재 치과 운영에서 가장 먼저 자동화하고 싶은 부분을 적어 주십시오."></textarea><button class="btn primary" type="button" onclick="saveConsultShell()">상담 신청 저장</button></div></div></div>
+  <div class="popup-overlay right" id="chatShell"><div class="popup-shell resizable chat-size-shell"><div class="popup-top"><div class="popup-title-wrap"><img class="popup-title-logo" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28"><div><h3>AI Agent Chatbot</h3><div class="popup-subtitle">Phoenix Dental 실시간 상담</div></div></div><button class="popup-close" type="button" onclick="closeShell('chatShell')">×</button></div><div class="chat-log" id="chatLog"><div class="chat-bubble bot">안녕하세요. 피닉스 치과 자동화 상담창입니다. 예약, 상담, 보험, 운영 자동화 중 무엇이 가장 궁금하신가요?</div></div><div class="form-grid" style="margin-top:14px;"><textarea id="chatInput" rows="3" placeholder="질문을 입력해 주십시오. 예: 야간 예약 문의를 자동화할 수 있나요?"></textarea><div style="font-size:12px;color:rgba(240,236,228,.56);">Enter로 전송, Shift+Enter로 줄바꿈</div><button class="btn primary" type="button" onclick="submitChatShell()">상담 보내기</button></div></div></div>
+  <div class="popup-overlay center" id="authShell"><div class="popup-shell auth-flow-shell"><div class="popup-top"><div class="popup-title-wrap"><img class="popup-title-logo" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28"><div><h3>Login / Mobile Auth</h3><div class="popup-subtitle">Phoenix Dental 인증</div></div></div><button class="popup-close" type="button" onclick="closeShell('authShell')">×</button></div><div class="auth-flow-step active" id="authStepChoice"><h3 class="auth-flow-title">접속 방식 선택</h3><p class="auth-flow-desc">원하시는 로그인 방식을 선택해 주십시오.</p><div class="auth-choice-grid"><div class="auth-choice-card" onclick="showAuthStep('userForm')"><div class="auth-choice-icon">📱</div><div class="auth-choice-title">휴대폰 본인인증</div><div class="auth-choice-desc">일반 사용자용 본인인증</div></div><div class="auth-choice-card" onclick="showAuthStep('admin')"><div class="auth-choice-icon">🔐</div><div class="auth-choice-title">관리자 인증</div><div class="auth-choice-desc">시스템 관리자 전용</div></div></div></div><div class="auth-flow-step" id="authStepUserForm"><h3 class="auth-flow-title">본인인증</h3><p class="auth-flow-desc">본인 명의의 휴대폰 번호를 입력해 주십시오.</p><div class="auth-form-panel"><div class="auth-field"><label for="authNameShell">이름</label><input id="authNameShell" type="text" placeholder="이름을 입력해 주십시오"></div><div class="auth-field"><label for="authCarrierShell">통신사</label><select id="authCarrierShell"><option value="SKT">SKT</option><option value="KT">KT</option><option value="LG U+">LG U+</option><option value="알뜰폰">알뜰폰</option></select></div><div class="auth-field"><label for="authPhoneShell">휴대폰 번호</label><input id="authPhoneShell" type="tel" placeholder="01012345678"></div><button class="auth-flow-btn" type="button" onclick="requestMobileAuth()">인증번호 요청</button><button class="auth-flow-link" type="button" onclick="showAuthStep('choice')">뒤로 가기</button></div></div><div class="auth-flow-step" id="authStepOtp"><h3 class="auth-flow-title">인증번호 입력</h3><p class="auth-flow-desc"><span id="authOtpGuidePhone">010-1234-5678</span> 번호로 전송된<br>인증번호 6자리를 입력해 주십시오.</p><div class="auth-otp-box"><input id="authOtpShell" type="text" maxlength="6" placeholder="000000"><span class="auth-otp-timer" id="authOtpTimer">02:56</span></div><button class="auth-flow-btn" type="button" onclick="verifyMobileAuth()" style="width:min(440px,100%);">인증 확인</button></div><div class="auth-flow-step" id="authStepComplete"><div class="auth-success-alert" id="authSuccessAlert"><div><strong>phoenix-portal.site 내용:</strong><br><span id="authSuccessMessage">정상 로그인 되었습니다.</span></div><button type="button" onclick="dismissAuthAlert()">확인</button></div><img class="auth-complete-icon" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="70" height="70"><h3 class="auth-flow-title">인증 완료!</h3><p class="auth-flow-desc"><span id="authCompleteName">고객</span>님의 본인인증이 성공적으로 완료되었습니다.</p><button class="auth-flow-btn" type="button" style="width:min(440px,100%);" onclick="closeShell('authShell')">계속하기</button></div><div class="auth-flow-step" id="authStepAdmin"><h3 class="auth-flow-title">관리자 인증</h3><p class="auth-flow-desc">시스템 관리자 전용 로그인입니다.</p><div class="auth-form-panel"><div class="auth-field"><label for="adminIdShell">관리자 아이디</label><input id="adminIdShell" type="text" placeholder="관리자 아이디"></div><div class="auth-field"><label for="adminPasswordShell">관리자 비밀번호</label><input id="adminPasswordShell" type="password" placeholder="관리자 비밀번호"></div><button class="auth-flow-btn" type="button" onclick="saveAdminLoginShell()">관리자 로그인</button><button class="auth-flow-link" type="button" onclick="showAuthStep('choice')">뒤로 가기</button></div></div><div id="authStatusShell" style="margin-top:14px; font-size:13px; color:rgba(240,236,228,.72); text-align:center;"></div></div></div>
+  <div class="payment-page-overlay" id="paymentShell"><div class="payment-page-bar"><div class="payment-page-left"><button class="payment-home-btn" type="button" onclick="forceGoMainPage()">메인으로</button><div class="payment-page-title"><img class="popup-title-logo" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28">결제하기</div></div><button class="popup-close" type="button" onclick="closePaymentPage()">×</button></div><div class="payment-form-wrap"><div class="payment-loading-text">결제 수단을 불러오는 중...</div><div class="payment-widget-card"><div id="payment-widget"></div></div><div class="payment-widget-card" style="margin-top:16px;"><div id="agreement"></div></div><button class="payment-action-btn" id="payment-button" type="button">129,000원 결제하기</button><div id="paymentStatusShell" style="margin-top:14px; font-size:13px; color:rgba(240,236,228,.72);"></div></div></div>
+  <div class="popup-overlay center" id="historyShell"><div class="popup-shell"><div class="popup-top"><div class="popup-title-wrap"><img class="popup-title-logo" src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28"><div><h3>Saved History</h3><div class="popup-subtitle">Phoenix Dental 저장 내역</div></div></div><button class="popup-close" type="button" onclick="closeShell('historyShell')">×</button></div><div class="history-list" id="historyListShell"></div></div></div>
+
+  <footer class="footer">
+    <div class="inner footer-grid">
+      <div>
+        <div class="brand" style="font-size:28px;"><img class="brand-logo footer" src="./Logos/phoenix_ai_logo.jpg" alt="Phoenix AI 로고" width="52" height="52">Phoenix Dental</div>
+        <p>치과 예약, 상담, 내부 전달, CRM 연동, 운영 리포트까지 연결하는 판매용 자동화 상세페이지 최종본입니다.</p>
+        <small>본 페이지는 치과 자동화 시스템 제안 및 판매용 랜딩페이지 시안입니다.</small>
+      </div>
+      <div>
+        <p><strong>문의</strong><br>070-8064-6114<br>phoenixai.sw@gmail.com</p>
+        <p><strong>핵심 서비스</strong><br>치과 예약 자동화, 상담 자동화, AI 에이전트 챗봇, CRM 연동, 운영 리포트 자동화</p>
+        <div class="footer-admin-btns" id="footerAdminBtns">
+          <button class="footer-admin-btn" type="button" onclick="openChatbotAdminPage()"><img src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="20" height="20">챗봇 관리</button>
+          <button class="footer-admin-btn" type="button" onclick="openCustomerAdminPage()"><img src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="20" height="20">고객 관리</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <script>
+    const shellHistoryKey = 'phoenixDentalShellHistory';
+    const tossClientKey = 'test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm';
+    const tossCustomerKey = 'PHOENIX_DENTAL_' + Math.random().toString(36).slice(2, 10);
+    let tossPayments = null, tossWidgets = null, pendingPayment = { name: '기본 상담 자동화 패키지', amount: 129000 }, pendingAuthCode = '', authOtpTimerHandle = null, isAdminLoggedIn = false;
+    function openShell(id){ const el=document.getElementById(id); if(el) el.classList.add('active'); if(id==='historyShell') renderShellHistory(); }
+    function closeShell(id){ const el=document.getElementById(id); if(el) el.classList.remove('active'); if(id==='authShell') resetAuthFlow(); }
+    function getShellHistory(){ try { return JSON.parse(localStorage.getItem(shellHistoryKey) || '[]'); } catch(e){ return []; } }
+    function setShellHistory(list){ localStorage.setItem(shellHistoryKey, JSON.stringify(list)); }
+    function pushShellHistory(type,payload){ const list=getShellHistory(); list.unshift({ type, payload, createdAt:new Date().toLocaleString('ko-KR') }); setShellHistory(list.slice(0,20)); }
+    function submitChatShell(){ const input=document.getElementById('chatInput'); const log=document.getElementById('chatLog'); const text=(input.value||'').trim(); if(!text) return; const user=document.createElement('div'); user.className='chat-bubble user'; user.textContent=text; log.appendChild(user); const bot=document.createElement('div'); bot.className='chat-bubble bot'; bot.innerHTML='문의 내용을 저장했습니다. 실제 연동 시에는 Netlify 함수 기반 AI 챗봇 응답으로 연결할 수 있습니다.'; log.appendChild(bot); log.scrollTop=log.scrollHeight; pushShellHistory('chat',{message:text}); input.value=''; }
+    function saveConsultShell(){ pushShellHistory('consult',{ name:document.getElementById('consultNameShell').value||'', phone:document.getElementById('consultPhoneShell').value||'', memo:document.getElementById('consultMemoShell').value||'' }); alert('상담 신청 정보가 저장되었습니다.'); }
+    function showAuthStep(step){ const map={ choice:'authStepChoice', userForm:'authStepUserForm', otp:'authStepOtp', complete:'authStepComplete', admin:'authStepAdmin' }; Object.values(map).forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); }); document.getElementById(map[step]||map.choice)?.classList.add('active'); document.getElementById('authStatusShell').textContent=''; }
+    function formatPhoneDisplay(phone){ const digits=String(phone||'').replace(/\D/g,''); if(digits.length===11) return digits.replace(/(\d{3})(\d{4})(\d{4})/,'$1-$2-$3'); return phone; }
+    function startAuthOtpTimer(seconds=176){ if(authOtpTimerHandle) clearInterval(authOtpTimerHandle); const deadline=Date.now()+seconds*1000; const timer=document.getElementById('authOtpTimer'); const render=()=>{ const remain=Math.max(0, deadline-Date.now()); const total=Math.ceil(remain/1000); timer.textContent=String(Math.floor(total/60)).padStart(2,'0')+':'+String(total%60).padStart(2,'0'); if(remain<=0&&authOtpTimerHandle){ clearInterval(authOtpTimerHandle); authOtpTimerHandle=null; } }; render(); authOtpTimerHandle=setInterval(render,1000); }
+    function requestMobileAuth(){ const name=(document.getElementById('authNameShell').value||'').trim(); const phone=(document.getElementById('authPhoneShell').value||'').trim(); const status=document.getElementById('authStatusShell'); if(!name){ status.textContent='이름을 먼저 입력해 주십시오.'; return; } if(!phone){ status.textContent='휴대폰 번호를 먼저 입력해 주십시오.'; return; } pendingAuthCode=String(Math.floor(100000+Math.random()*900000)); document.getElementById('authOtpGuidePhone').textContent=formatPhoneDisplay(phone); document.getElementById('authOtpShell').value=''; startAuthOtpTimer(); showAuthStep('otp'); status.textContent='테스트용 인증번호가 생성되었습니다. 현재 데모에서는 아무 번호나 입력해도 인증이 완료됩니다.'; }
+    function verifyMobileAuth(){ const name=(document.getElementById('authNameShell').value||'').trim()||'고객'; const phone=(document.getElementById('authPhoneShell').value||'').trim(); const otp=(document.getElementById('authOtpShell').value||'').trim(); const status=document.getElementById('authStatusShell'); if(!pendingAuthCode){ status.textContent='먼저 인증번호를 요청해 주십시오.'; showAuthStep('userForm'); return; } if(!otp){ status.textContent='인증번호를 입력해 주십시오.'; return; } if(authOtpTimerHandle){ clearInterval(authOtpTimerHandle); authOtpTimerHandle=null; } pushShellHistory('auth',{ name, phone, otp, verified:true, demoMode:true }); document.getElementById('authCompleteName').textContent=name; document.getElementById('authSuccessMessage').textContent='데모 모드 인증이 완료되었습니다. 환영합니다, '+name+'님!'; document.getElementById('authSuccessAlert').classList.add('active'); showAuthStep('complete'); }
+    function dismissAuthAlert(){ document.getElementById('authSuccessAlert').classList.remove('active'); }
+    function saveAdminLoginShell(){ const id=(document.getElementById('adminIdShell').value||'').trim(); const pw=(document.getElementById('adminPasswordShell').value||'').trim(); const status=document.getElementById('authStatusShell'); if(!id||!pw){ status.textContent='관리자 아이디와 비밀번호를 입력해 주십시오.'; return; } isAdminLoggedIn=true; syncAdminControls(); pushShellHistory('admin-login',{id,success:true}); document.getElementById('authCompleteName').textContent='관리자'; document.getElementById('authSuccessMessage').textContent='관리자 로그인이 정상적으로 완료되었습니다.'; document.getElementById('authSuccessAlert').classList.add('active'); showAuthStep('complete'); }
+    function resetAuthFlow(){ showAuthStep('choice'); pendingAuthCode=''; document.getElementById('authStatusShell').textContent=''; document.getElementById('authOtpShell').value=''; document.getElementById('authSuccessAlert').classList.remove('active'); if(authOtpTimerHandle){ clearInterval(authOtpTimerHandle); authOtpTimerHandle=null; } }
+    function syncAdminControls(){ const footer=document.getElementById('footerAdminBtns'); if(footer) footer.style.display=isAdminLoggedIn?'flex':'none'; }
+    function openCustomerAdminPage(){ window.open('./20260428_피닉스치과_고객관리.html','_blank','noopener,noreferrer'); }
+    function openChatbotAdminPage(){ window.open('./20260428_피닉스치과_챗봇관리.html','_blank','noopener,noreferrer'); }
+    async function initTossWidgets(amount){ try{ if(!tossPayments) tossPayments=TossPayments(tossClientKey); tossWidgets=tossPayments.widgets({ customerKey:tossCustomerKey }); await tossWidgets.setAmount({ currency:'KRW', value:amount }); await Promise.all([ tossWidgets.renderPaymentMethods({ selector:'#payment-widget', variantKey:'DEFAULT' }), tossWidgets.renderAgreement({ selector:'#agreement', variantKey:'AGREEMENT' }) ]); } catch(e){ document.getElementById('paymentStatusShell').textContent='결제 위젯 초기화 중 오류가 발생했습니다.'; } }
+    function closePaymentPage(){ closeShell('paymentShell'); tossWidgets=null; document.getElementById('payment-widget').innerHTML=''; document.getElementById('agreement').innerHTML=''; document.getElementById('paymentStatusShell').textContent=''; }
+    function forceGoMainPage(){ closePaymentPage(); window.scrollTo({ top:0, behavior:'smooth' }); }
+    async function openPaymentFor(name,amount){ pendingPayment={ name, amount }; document.getElementById('paymentStatusShell').textContent='결제 수단을 불러오는 중입니다.'; openShell('paymentShell'); document.querySelector('.payment-loading-text').textContent='결제 수단을 불러오는 중...'; document.getElementById('payment-widget').innerHTML='<div style="color:#111827; text-align:center; padding:20px;">결제 수단을 불러오는 중...</div>'; document.getElementById('agreement').innerHTML=''; await initTossWidgets(amount); const payBtn=document.getElementById('payment-button'); payBtn.innerText=amount.toLocaleString('ko-KR')+'원 결제하기'; document.querySelector('.payment-loading-text').textContent=''; payBtn.onclick=async function(){ try{ const baseUrl=window.location.origin+window.location.pathname; await tossWidgets.requestPayment({ orderId:'PHX-'+Date.now(), orderName:name, successUrl:baseUrl+'?payment=success', failUrl:baseUrl+'?payment=fail' }); } catch(error){ if(!error||error.code!=='USER_CANCEL'){ document.getElementById('paymentStatusShell').textContent=error&&error.message?error.message:'결제 요청 중 오류가 발생했습니다.'; } } }; document.getElementById('paymentStatusShell').textContent='원본 소스 기반 토스 간편결제 위젯이 준비되었습니다.'; }
+    function renderShellHistory(){ const wrap=document.getElementById('historyListShell'); const list=getShellHistory(); wrap.innerHTML=list.length?list.map(item=>`<div class="history-item"><strong>${item.type}</strong><br>${Object.entries(item.payload).map(([k,v])=>`${k}: ${v || '-'} `).join('<br>')}<br><span style="font-size:12px;color:rgba(240,236,228,.58);">${item.createdAt}</span></div>`).join(''):'<div class="history-item">아직 저장된 상담/인증/결제 이력이 없습니다.</div>'; }
+    window.addEventListener('load',()=>{ const params=new URLSearchParams(window.location.search); if(params.get('payment')==='success'){ alert('토스 결제가 정상적으로 완료되었습니다.'); window.history.replaceState({},document.title,window.location.pathname+window.location.hash);} else if(params.get('payment')==='fail'){ alert('결제가 취소되었거나 실패했습니다.'); window.history.replaceState({},document.title,window.location.pathname+window.location.hash);} });
+    document.addEventListener('DOMContentLoaded',()=>{ document.querySelectorAll('.popup-overlay').forEach(el=>el.addEventListener('click',e=>{ if(e.target===el) el.classList.remove('active'); })); const chatInput=document.getElementById('chatInput'); if(chatInput){ chatInput.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); submitChatShell(); } }); } syncAdminControls(); });
+  </script>
+</body>
+</html>

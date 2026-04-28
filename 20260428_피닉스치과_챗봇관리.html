@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phoenix Dental | 챗봇 관리</title>
+  <style>
+    :root {
+      --bg: #0a0f1b;
+      --panel: #141d2f;
+      --gold: #c9a961;
+      --text: #f5efe4;
+      --muted: rgba(245,239,228,.68);
+      --line: rgba(255,255,255,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Pretendard, Arial, sans-serif;
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      min-height: 68px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--line);
+      background: #0d1321;
+      position: sticky;
+      top: 0;
+    }
+    .title {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+    .title img { width: 28px; height: 28px; border-radius: 8px; background: #fff; }
+    .top-center-close {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .wrap { max-width: 1600px; margin: 0 auto; padding: 36px 24px 48px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 28px 22px;
+      min-height: 320px;
+    }
+    .card h2 {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 500;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .field input, .field select {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      color: #fff;
+      padding: 10px 0 12px;
+      font: inherit;
+    }
+    .field select {
+      background-color: #141d2f;
+      color: #ffffff;
+    }
+    .field select option {
+      background: #ffffff;
+      color: #111827;
+    }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .btn {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn.primary { background: rgba(201,169,97,.18); border-color: rgba(201,169,97,.42); color: #f0cf87; }
+    .btn.danger { color: #ff86a0; border-color: rgba(255,134,160,.34); }
+    .status { margin-top: 16px; color: var(--muted); white-space: pre-line; }
+    @media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="title"><img src="./Logos/phoenix_ai_logo.jpg" alt="피닉스 로고" width="28" height="28">AI 챗봇 관리</div>
+    <button class="btn top-center-close" type="button" onclick="closePage()">닫기</button>
+  </div>
+  <div class="wrap">
+    <div class="grid">
+      <section class="card">
+        <h2>ChatGPT API</h2>
+        <div class="field"><label for="chatgptModel">모델 선택</label><select id="chatgptModel" onchange="toggleFinetuningInput()"><option value="">선택 안함</option><option value="GPT-5.4">GPT-5.4</option><option value="GPT-5.4 Mini">GPT-5.4 Mini</option><option value="GPT-5.4 Nano">GPT-5.4 Nano</option><option value="Finetuning (GPT-5.x 계열)">Finetuning (GPT-5.x 계열)</option><option value="Finetuning (GPT-4.x 계열)">Finetuning (GPT-4.x 계열)</option></select></div>
+        <div class="field" id="chatgptFinetuningField" style="display:none;"><label for="chatgptFinetuningModel">Finetuning 모델 ID</label><input id="chatgptFinetuningModel" type="text" placeholder="ft:gpt-..." autocomplete="off"></div>
+        <div class="field"><label for="chatgptApiKey">API Key</label><input id="chatgptApiKey" type="password" placeholder="sk-..." autocomplete="new-password"></div>
+      </section>
+      <section class="card">
+        <h2>Gemini API</h2>
+        <div class="field"><label for="geminiModel">모델 선택</label><select id="geminiModel"><option value="">선택 안함</option><option>Gemini 3.1 Pro</option><option>Gemini 3 Flash</option><option>Gemini 2.5 Flash</option></select></div>
+        <div class="field"><label for="geminiApiKey">API Key</label><input id="geminiApiKey" type="password" placeholder="AI..." autocomplete="new-password"></div>
+      </section>
+      <section class="card">
+        <h2>Claude API</h2>
+        <div class="field"><label for="claudeModel">모델 선택</label><select id="claudeModel"><option value="">선택 안함</option><option>Claude Sonnet 4.6</option><option>Claude Opus 4.6</option><option>Claude Haiku 4.5</option></select></div>
+        <div class="field"><label for="claudeApiKey">API Key</label><input id="claudeApiKey" type="password" placeholder="sk-ant-..." autocomplete="new-password"></div>
+      </section>
+    </div>
+    <div class="actions">
+      <button class="btn primary" type="button" onclick="saveApiSettings()">💾 설정 저장</button>
+      <button class="btn" type="button" onclick="testApiConnection()">🔗 연결 테스트</button>
+      <button class="btn danger" type="button" onclick="resetApiSettings()">🔄 초기화</button>
+      <button class="btn" type="button" onclick="closePage()">닫기</button>
+    </div>
+    <div class="status" id="apiStatus"></div>
+  </div>
+  <script>
+    const storageKey = 'phoenixDentalApiSettings';
+    function saveApiSettings() {
+      const payload = {
+        chatgptModel: document.getElementById('chatgptModel').value,
+        chatgptFinetuningModel: document.getElementById('chatgptFinetuningModel').value,
+        geminiModel: document.getElementById('geminiModel').value,
+        claudeModel: document.getElementById('claudeModel').value,
+        chatgptApiKey: document.getElementById('chatgptApiKey').value,
+        geminiApiKey: document.getElementById('geminiApiKey').value,
+        claudeApiKey: document.getElementById('claudeApiKey').value,
+      };
+      localStorage.setItem(storageKey, JSON.stringify(payload));
+      document.getElementById('apiStatus').textContent = '설정이 저장되었습니다.';
+    }
+    function testApiConnection() {
+      document.getElementById('apiStatus').textContent = '테스트 연결 확인 준비가 완료되었습니다. 실제 API 연동 시 서버 검증으로 교체됩니다.';
+    }
+    function resetApiSettings() {
+      localStorage.removeItem(storageKey);
+      ['chatgptModel','chatgptFinetuningModel','geminiModel','claudeModel','chatgptApiKey','geminiApiKey','claudeApiKey'].forEach((id) => document.getElementById(id).value = '');
+      toggleFinetuningInput();
+      document.getElementById('apiStatus').textContent = 'API 설정이 초기화되었습니다.';
+    }
+    function toggleFinetuningInput() {
+      const value = document.getElementById('chatgptModel').value;
+      const field = document.getElementById('chatgptFinetuningField');
+      if (!field) return;
+      field.style.display = value.includes('Finetuning') ? 'block' : 'none';
+    }
+    function closePage() {
+      if (window.history.length > 1) {
+        window.close();
+        setTimeout(() => { history.back(); }, 150);
+      } else {
+        window.close();
+      }
+    }
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      Object.entries(saved).forEach(([k, v]) => { const el = document.getElementById(k); if (el) el.value = v || ''; });
+      toggleFinetuningInput();
+    } catch (e) {}
+  </script>
+</body>
+</html>

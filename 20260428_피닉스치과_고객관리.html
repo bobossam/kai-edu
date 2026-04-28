@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phoenix Dental | 고객 관리</title>
+  <style>
+    :root {
+      --bg: #0a0f1b;
+      --gold: #c9a961;
+      --text: #f5efe4;
+      --muted: rgba(245,239,228,.68);
+      --line: rgba(255,255,255,.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: Pretendard, Arial, sans-serif; }
+    .bar {
+      display: flex; align-items: center; justify-content: flex-start; gap: 12px;
+      min-height: 68px; padding: 0 24px; border-bottom: 1px solid var(--line); background: #0d1321; position: sticky; top: 0;
+    }
+    .title { font-size: 15px; font-weight: 800; letter-spacing: .08em; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+    .top-center-close {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn {
+      min-height: 36px; padding: 0 12px; border: 1px solid rgba(201,169,97,.18); background: rgba(255,255,255,.03); color: var(--text);
+      font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+    .btn.gold { background: var(--gold); color: #141b28; border-color: var(--gold); }
+    .wrap { max-width: 1600px; margin: 0 auto; padding: 34px 24px 48px; }
+    .stats { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+    .stats strong { color: #e8cb7c; }
+    .table-wrap { overflow: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 13px; }
+    th { color: #d3a94f; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
+    td { color: rgba(255,255,255,.74); }
+    tr:hover td { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="title">📊 관리자 대시보드</div>
+    <div class="actions">
+      <button class="btn top-center-close" type="button" onclick="closePage()">닫기</button>
+      <button class="btn gold" type="button" onclick="downloadCustomerExcel()">엑셀 다운로드</button>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">총 신청자 수: <strong id="total-count">0</strong>명</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">신청일시</th>
+            <th scope="col">성명</th>
+            <th scope="col">아이디(이메일)</th>
+            <th scope="col">비밀번호(연락처 끝 4자리)</th>
+            <th scope="col">연락처</th>
+            <th scope="col">참가경로</th>
+            <th scope="col">자동화 서비스</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function formatPhoneDisplay(phone) {
+      const digits = String(phone || '').replace(/\D/g, '');
+      if (digits.length === 11) return digits.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+      return phone || '-';
+    }
+    function getShellHistory() {
+      try { return JSON.parse(localStorage.getItem('phoenixDentalShellHistory') || '[]'); } catch (e) { return []; }
+    }
+    function buildRows() {
+      const list = getShellHistory();
+      const consults = list.filter(item => item.type === 'consult');
+      const auths = list.filter(item => item.type === 'auth');
+      if (!consults.length && !auths.length) {
+        return [
+          { createdAt: new Date().toLocaleString('ko-KR'), name: '김철수', email: 'kim@example.com', passwordHint: '5678', phone: '010-1234-5678', route: 'SNS', service: '고객 문의 응답 자동화 및 이메일 마케팅 시스템 구축' },
+          { createdAt: new Date().toLocaleString('ko-KR'), name: '이영희', email: 'lee@example.com', passwordHint: '5432', phone: '010-9876-5432', route: '지인추천', service: 'SNS 콘텐츠 자동 게시 및 성과 분석 대시보드' }
+        ];
+      }
+      return consults.map((item, idx) => {
+        const matchedAuth = auths.find(a => (a.payload.phone || '') === (item.payload.phone || ''));
+        const phone = item.payload.phone || matchedAuth?.payload.phone || '';
+        return {
+          createdAt: item.createdAt,
+          name: item.payload.name || matchedAuth?.payload.name || '고객',
+          email: `customer${idx + 1}@phoenixdental.kr`,
+          passwordHint: String(phone).replace(/\D/g, '').slice(-4) || '0000',
+          phone: formatPhoneDisplay(phone || '01000000000'),
+          route: idx % 2 === 0 ? 'SNS' : '지인추천',
+          service: item.payload.memo || '치과 예약 자동화 및 상담 전환 구조 설계'
+        };
+      });
+    }
+    function renderTable() {
+      const rows = buildRows();
+      document.getElementById('total-count').textContent = rows.length;
+      document.getElementById('data-table-body').innerHTML = rows.map(row => `
+        <tr>
+          <td>${row.createdAt}</td>
+          <td>${row.name}</td>
+          <td>${row.email}</td>
+          <td>${row.passwordHint}</td>
+          <td>${row.phone}</td>
+          <td>${row.route}</td>
+          <td>${row.service}</td>
+        </tr>
+      `).join('');
+    }
+    function downloadCustomerExcel() {
+      alert('엑셀 다운로드 연결 지점입니다. 실서버 연동 시 파일 생성으로 교체됩니다.');
+    }
+    function closePage() {
+      if (window.history.length > 1) {
+        window.close();
+        setTimeout(() => { history.back(); }, 150);
+      } else {
+        window.close();
+      }
+    }
+    renderTable();
+  </script>
+</body>
+</html>

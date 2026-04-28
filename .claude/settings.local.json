@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://api.github.com/repos/bobossam/kaiedu/contents/images\")",
+      "Bash(curl -s \"https://api.github.com/repos/bobossam/kaiedu\")",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"https://github.com/bobossam/kaiedu\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"https://api.github.com/repos/bobossam/kaiedu\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"https://github.com/bobossam/kai-edu\")",
+      "Bash(curl -s \"https://api.github.com/repos/bobossam/kai-edu/contents/images\")",
+      "Bash(curl -s \"https://api.github.com/repos/bobossam/kai-edu/contents/Logos\")",
+      "Bash(curl -sI \"https://raw.githubusercontent.com/bobossam/kai-edu/main/Logos/Minimal_modern_logo_design_for_Korea_AI_Education_-1777384248051.png\")"
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Phoenix Dental | 고객 관리</title>
+  <title>한국AI교육연구원 | 고객 관리</title>
   <style>
     :root {
       --bg: #0a0f1b;
@@ -75,7 +75,7 @@
       return phone || '-';
     }
     function getShellHistory() {
-      try { return JSON.parse(localStorage.getItem('phoenixDentalShellHistory') || '[]'); } catch (e) { return []; }
+      try { return JSON.parse(localStorage.getItem('kaieduShellHistory') || '[]'); } catch (e) { return []; }
     }
     function buildRows() {
       const list = getShellHistory();
@@ -93,7 +93,7 @@
         return {
           createdAt: item.createdAt,
           name: item.payload.name || matchedAuth?.payload.name || '고객',
-          email: `customer${idx + 1}@phoenixdental.kr`,
+          email: `customer${idx + 1}@kaiedu.kr`,
           passwordHint: String(phone).replace(/\D/g, '').slice(-4) || '0000',
           phone: formatPhoneDisplay(phone || '01000000000'),
           route: idx % 2 === 0 ? 'SNS' : '지인추천',

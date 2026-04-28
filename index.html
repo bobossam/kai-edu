@@ -909,7 +909,7 @@
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Professional_sketch-style_illustration_for_Korean_-1777375692992.png" alt="기업 자동화 개요 인포그래픽" width="1024" height="1024"><div class="image-note">자동화 개요를 요약하는 이미지입니다.</div></div>
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Professional_sketch_infographic_KOREAN_AI_EDUCATI-1777375717153.png" alt="기업 예약 상담 흐름 인포그래픽" width="1024" height="1024"><div class="image-note">예약과 상담 흐름을 설명하는 이미지입니다.</div></div>
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Clean_sketch_infographic_showing_TARGET_CUSTOMERS-1777375705805.png" alt="기업 자동화 CTA 인포그래픽" width="1024" height="1024"><div class="image-note">최종 CTA와 도입 유도 메시지를 담은 이미지입니다.</div></div>
-            <div class="image-frame visual-slide" tabindex="0"><img src="./images/Sophisticated_sketch_illustration_of_CUSTOMIZED_L-1777375700323.png" alt="기업 자동화 대시보드 인포그래픽" width="1024" height="1024"><div class="image-note">상담실장용 대시보드와 운영 지표를 설명합니다.</div></div>
+            <div class="image-frame visual-slide" tabindex="0"><img src="./images/Sophisticated_sketch_illustration_of_CUSTOMIZED_L-1777375700323.png" alt="기업 자동화 대시보드 인포그래픽" width="1024" height="1024"><div class="image-note">교육 운영팀용 대시보드와 운영 지표를 설명합니다.</div></div>
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Professional_sketch_infographic_KOREAN_AI_EDUCATI-1777375717153.png" alt="기업 문의 통합 인포그래픽" width="1024" height="1024"><div class="image-note">문의 통합 구조를 보여주는 이미지입니다.</div></div>
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Elegant_sketch-style_infographic_showing_OPENCLAW-1777375697074.png" alt="기업 CRM 리포트 인포그래픽" width="1024" height="1024"><div class="image-note">CRM과 리포트 구조를 설명하는 이미지입니다.</div></div>
             <div class="image-frame visual-slide" tabindex="0"><img src="./images/Premium_sketch-style_illustration_for_AI_EDUCATIO-1777375703166.png" alt="기업 자동화 메인 커버 인포그래픽" width="1024" height="1024"><div class="image-note">메인 커버용 대표 이미지입니다.</div></div>
@@ -1012,7 +1012,47 @@
     function getShellHistory(){ try { return JSON.parse(localStorage.getItem(shellHistoryKey) || '[]'); } catch(e){ return []; } }
     function setShellHistory(list){ localStorage.setItem(shellHistoryKey, JSON.stringify(list)); }
     function pushShellHistory(type,payload){ const list=getShellHistory(); list.unshift({ type, payload, createdAt:new Date().toLocaleString('ko-KR') }); setShellHistory(list.slice(0,20)); }
-    function submitChatShell(){ const input=document.getElementById('chatInput'); const log=document.getElementById('chatLog'); const text=(input.value||'').trim(); if(!text) return; const user=document.createElement('div'); user.className='chat-bubble user'; user.textContent=text; log.appendChild(user); const bot=document.createElement('div'); bot.className='chat-bubble bot'; bot.innerHTML='문의 내용을 저장했습니다. 실제 연동 시에는 Netlify 함수 기반 AI 챗봇 응답으로 연결할 수 있습니다.'; log.appendChild(bot); log.scrollTop=log.scrollHeight; pushShellHistory('chat',{message:text}); input.value=''; }
+    async function submitChatShell(){
+      const input=document.getElementById('chatInput');
+      const log=document.getElementById('chatLog');
+      const text=(input.value||'').trim();
+      if(!text) return;
+      
+      const user=document.createElement('div');
+      user.className='chat-bubble user';
+      user.textContent=text;
+      log.appendChild(user);
+      
+      const bot=document.createElement('div');
+      bot.className='chat-bubble bot';
+      bot.innerHTML='<span style="opacity: 0.6;">답변을 생각하고 있습니다...</span>';
+      log.appendChild(bot);
+      log.scrollTop=log.scrollHeight;
+      
+      input.value='';
+      
+      try {
+        const response = await fetch('/.netlify/functions/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await response.json();
+        
+        if (response.ok) {
+          bot.textContent = data.reply;
+        } else {
+          bot.textContent = '죄송합니다. 챗봇 응답 중 오류가 발생했습니다.';
+          console.error('API Error:', data);
+        }
+      } catch (error) {
+        bot.textContent = '네트워크 오류가 발생했습니다. 연결 상태를 확인해 주세요.';
+        console.error('Fetch Error:', error);
+      }
+      
+      log.scrollTop=log.scrollHeight;
+      pushShellHistory('chat',{message:text});
+    }
     function saveConsultShell(){ pushShellHistory('consult',{ name:document.getElementById('consultNameShell').value||'', phone:document.getElementById('consultPhoneShell').value||'', memo:document.getElementById('consultMemoShell').value||'' }); alert('상담 신청 정보가 저장되었습니다.'); }
     function showAuthStep(step){ const map={ choice:'authStepChoice', userForm:'authStepUserForm', otp:'authStepOtp', complete:'authStepComplete', admin:'authStepAdmin' }; Object.values(map).forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); }); document.getElementById(map[step]||map.choice)?.classList.add('active'); document.getElementById('authStatusShell').textContent=''; }
     function formatPhoneDisplay(phone){ const digits=String(phone||'').replace(/\D/g,''); if(digits.length===11) return digits.replace(/(\d{3})(\d{4})(\d{4})/,'$1-$2-$3'); return phone; }
